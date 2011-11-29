@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>~/116828/lab/notes/a20.html</title>
+<meta name="Generator" content="Vim/7.2">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body bgcolor="#ffffff" text="#000000"><font face="monospace">
+<font color="#ffff00">&nbsp;1 </font>a20起源:<br>
+<font color="#ffff00">&nbsp;2 </font>很久以前只有8086/8088的cpu时.总线只有20根。可寻址地址范围为2^20 = 1M<br>
+<font color="#ffff00">&nbsp;3 </font>但是,实际上该cpu使用的是16位寄存器,所以使用了 __段式__的寻找方式，即: 16 * base + offset<br>
+<font color="#ffff00">&nbsp;4 </font>但是,该寻址方式的__最大值__为: 16 * 0xffff + 0xffff = ffff0 + ffff = 0x10ffffef , 即: 1M + 64k - 16byte<br>
+<font color="#ffff00">&nbsp;5 </font>超过了1M,所以,当时采用的解决方法是:<br>
+<font color="#ffff00">&nbsp;6 </font>当访问超过1M的地址时,对该地址进行&quot;取余&quot;. 若访问1M + 64k的地址，则实际访问的是64k.<br>
+<font color="#ffff00">&nbsp;7 </font><br>
+<font color="#ffff00">&nbsp;8 </font>a20影响:<br>
+<font color="#ffff00">&nbsp;9 </font>之后，80286出现了。总线增长到了24跟。则可寻址的范围变成了2^24 = 16M.<br>
+<font color="#ffff00">10 </font>为了对8086/8088保持兼容(即在8086/8088上的表现应在80286上一样),可是,问题出现了:<br>
+<font color="#ffff00">11 </font>80286由于寻址范围是16M,所以,自然可以访问&quot;实际内存地址&quot;1M~16M. 所以,为了保持兼容,加入了___A20__开关:<br>
+<font color="#ffff00">12 </font>即<br>
+<font color="#ffff00">13 </font>&nbsp;&nbsp;当A20开关打开时(第21根地址线可以为__0__或者__1__):CPU内够访问实际内存地址<br>
+<font color="#ffff00">14 </font>&nbsp;&nbsp;当A20开关关闭时(第21跟地址线__只能__为__0__):则采用8086访问方式,即&quot;取余&quot;<br>
+<font color="#ffff00">15 </font>由于此时,CPU寻址能力大大提升,远超过1M.所以出现了:__保护模式__(寻址范围为4G), 而之前8086/8088所采用的则为__实模式__(寻址范围为1M).<br>
+<font color="#ffff00">16 </font>然而,在保护模式下,若地址线的20bit(从0开始)为0时(则A20B被__关闭__),会出现可寻址的地址不连续的情况,如1M,3M,5M....(因为20bit值为0)<br>
+<font color="#ffff00">17 </font>所以,在__保护模式__,需要 打开__A20__开关.以便能够连续寻址.<br>
+</font></body>
+</html>

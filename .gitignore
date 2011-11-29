@@ -1,0 +1,7 @@
+#Untrack files
+*.o
+docs
+cscope*
+*.out
+*.in
+/obj
