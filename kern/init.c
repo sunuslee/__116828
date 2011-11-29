@@ -9,6 +9,38 @@
 #include <kern/pmap.h>
 #include <kern/kclock.h>
 
+#define DEBUG_1(on, val)                                                         \
+do                                                                               \
+{                                                                                \
+        if(on)                                                                   \
+        {                                                                        \
+                cprintf("[DEBUG Info]: val:%s = %08x\n", #val, (uint32_t)(val)); \
+                while(getchar() != 'c') ;                                        \
+        }                                                                        \
+}while(0)
+
+#define DEBUG_2(on, val)                                                         \
+do                                                                               \
+{                                                                                \
+        if(on)                                                                   \
+        {                                                                        \
+                cprintf("[DEBUG Info]: val:%s = %08x %s:%s:%d\n",                \
+                        #val, (uint32_t)(val), __FILE__, __func__, __LINE__);    \
+                while(getchar() != 'c') ;                                        \
+        }                                                                        \
+}while(0)
+
+#define DEBUG_X(on, vals_fmt, ...)                                               \
+do{                                                                              \
+        if(on)                                                                   \
+        {                                                                        \
+                cprintf("[DEBUG Info]: %s:%s:%d\n[DEBUG Info]: ",                \
+                                __FILE__, __func__, __LINE__);                   \
+                cprintf(vals_fmt, __VA_ARGS__);                                  \
+                cprintf("\n");                                                   \
+                while(getchar() != 'c') ;                                        \
+        }                                                                        \
+}while(0)
 
 void
 i386_init(void)
@@ -19,13 +51,12 @@ i386_init(void)
 	// Clear the uninitialized global data (BSS) section of our program.
 	// This ensures that all static/global variables start out zero.
 	memset(edata, 0, end - edata);
-
 	// Initialize the console.
 	// Can't call cprintf until after we do this!
 	cons_init();
 
 	cprintf("6828 decimal is %o octal!\n", 6828);
-
+    DEBUG_1(1, edata);
 	// Lab 2 memory management initialization functions
 	mem_init();
 

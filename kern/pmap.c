@@ -98,8 +98,13 @@ boot_alloc(uint32_t n)
 	// to a multiple of PGSIZE.
 	//
 	// LAB 2: Your code here.
+    // sunus
+    // Tue Nov 29 17:27:25 CST 2011
 
-	return NULL;
+    n = ROUNDUP(n, PGSIZE);
+    nextfree += n;
+    cprintf("%d bytes allocated!\n", n);
+	return nextfree;
 }
 
 // Set up a two-level page table:
