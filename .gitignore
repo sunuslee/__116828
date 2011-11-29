@@ -1,3 +1,4 @@
+#Untrack files
 /obj
 /jos.in
 /jos.log
@@ -12,3 +13,9 @@
 /lab?/
 /sol?/
 /conf/lab.mk
+*.o
+docs
+cscope*
+*.out
+*.in
+/obj
