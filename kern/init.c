@@ -1,4 +1,3 @@
-TESTESTETSELABLAB!
 /* See COPYRIGHT for copyright information. */
 
 #include <inc/stdio.h>
