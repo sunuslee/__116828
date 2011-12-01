@@ -17,4 +17,37 @@ void _panic(const char*, int, const char*, ...) __attribute__((noreturn));
 // static_assert(x) will generate a compile-time error if 'x' is false.
 #define static_assert(x)	switch (x) case 0: case (x):
 
+#define DEBUG_1(on, pause, val)                                                  \
+do                                                                               \
+{                                                                                \
+        if(on)                                                                   \
+        {                                                                        \
+                cprintf("[DEBUG Info]: val:%s = %08x\n", #val, (uint32_t)(val)); \
+                while(pause && (getchar() != 'c')) ;                             \
+        }                                                                        \
+}while(0)
+
+#define DEBUG_2(on, pause, val)                                                  \
+do                                                                               \
+{                                                                                \
+        if(on)                                                                   \
+        {                                                                        \
+                cprintf("[DEBUG Info]: val:%s = %08x %s:%s:%d\n",                \
+                        #val, (uint32_t)(val), __FILE__, __func__, __LINE__);    \
+                while(pause && (getchar() != 'c')) ;                             \
+        }                                                                        \
+}while(0)
+
+#define DEBUG_X(on, pause, vals_fmt, ...)                                        \
+do{                                                                              \
+        if(on)                                                                   \
+        {                                                                        \
+                cprintf("[DEBUG Info]: %s:%s:%d\n[DEBUG Info]: ",                \
+                                __FILE__, __func__, __LINE__);                   \
+                cprintf(vals_fmt, __VA_ARGS__);                                  \
+                cprintf("\n");                                                   \
+                while(pause && (getchar() != 'c')) ;                             \
+        }                                                                        \
+}while(0)
+
 #endif /* !JOS_INC_ASSERT_H */

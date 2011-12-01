@@ -9,28 +9,28 @@
 #include <kern/pmap.h>
 #include <kern/kclock.h>
 
-#define DEBUG_1(on, val)                                                         \
+#define DEBUG_1(on, pause, val)                                                  \
 do                                                                               \
 {                                                                                \
         if(on)                                                                   \
         {                                                                        \
                 cprintf("[DEBUG Info]: val:%s = %08x\n", #val, (uint32_t)(val)); \
-                while(getchar() != 'c') ;                                        \
+                while(pause && (getchar() != 'c')) ;                             \
         }                                                                        \
 }while(0)
 
-#define DEBUG_2(on, val)                                                         \
+#define DEBUG_2(on, pause, val)                                                  \
 do                                                                               \
 {                                                                                \
         if(on)                                                                   \
         {                                                                        \
                 cprintf("[DEBUG Info]: val:%s = %08x %s:%s:%d\n",                \
                         #val, (uint32_t)(val), __FILE__, __func__, __LINE__);    \
-                while(getchar() != 'c') ;                                        \
+                while(pause && (getchar() != 'c')) ;                             \
         }                                                                        \
 }while(0)
 
-#define DEBUG_X(on, vals_fmt, ...)                                               \
+#define DEBUG_X(on, pause, vals_fmt, ...)                                        \
 do{                                                                              \
         if(on)                                                                   \
         {                                                                        \
@@ -38,7 +38,7 @@ do{                                                                             
                                 __FILE__, __func__, __LINE__);                   \
                 cprintf(vals_fmt, __VA_ARGS__);                                  \
                 cprintf("\n");                                                   \
-                while(getchar() != 'c') ;                                        \
+                while(pause && (getchar() != 'c')) ;                             \
         }                                                                        \
 }while(0)
 
@@ -56,7 +56,6 @@ i386_init(void)
 	cons_init();
 
 	cprintf("6828 decimal is %o octal!\n", 6828);
-    DEBUG_1(1, edata);
 	// Lab 2 memory management initialization functions
 	mem_init();
 

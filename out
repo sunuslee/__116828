@@ -1,0 +1,207 @@
++ cc kern/pmap.c
++ ld obj/kern/kernel
++ mk obj/kern/kernel.img
+***
+*** Use Ctrl-a x to exit qemu
+***
+qemu -nographic -hda obj/kern/kernel.img -serial mon:stdio 
+6828 decimal is 15254 octal!
+Physical memory: 66556K available, base = 640K, extended = 65532K
+4096 bytes allocated!
+68153344 bytes allocated!
+[DEBUG Info]: kern/pmap.c:page_init:280
+[DEBUG Info]: skip page 0	     f0116000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 160	     f01b6000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 161	     f01b7000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 162	     f01b8000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 163	     f01b9000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 164	     f01ba000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 165	     f01bb000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 166	     f01bc000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 167	     f01bd000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 168	     f01be000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 169	     f01bf000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 170	     f01c0000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 171	     f01c1000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 172	     f01c2000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 173	     f01c3000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 174	     f01c4000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 175	     f01c5000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 176	     f01c6000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 177	     f01c7000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 178	     f01c8000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 179	     f01c9000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 180	     f01ca000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 181	     f01cb000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 182	     f01cc000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 183	     f01cd000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 184	     f01ce000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 185	     f01cf000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 186	     f01d0000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 187	     f01d1000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 188	     f01d2000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 189	     f01d3000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 190	     f01d4000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 191	     f01d5000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 192	     f01d6000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 193	     f01d7000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 194	     f01d8000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 195	     f01d9000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 196	     f01da000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 197	     f01db000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 198	     f01dc000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 199	     f01dd000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 200	     f01de000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 201	     f01df000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 202	     f01e0000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 203	     f01e1000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 204	     f01e2000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 205	     f01e3000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 206	     f01e4000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 207	     f01e5000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 208	     f01e6000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 209	     f01e7000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 210	     f01e8000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 211	     f01e9000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 212	     f01ea000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 213	     f01eb000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 214	     f01ec000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 215	     f01ed000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 216	     f01ee000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 217	     f01ef000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 218	     f01f0000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 219	     f01f1000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 220	     f01f2000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 221	     f01f3000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 222	     f01f4000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 223	     f01f5000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 224	     f01f6000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 225	     f01f7000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 226	     f01f8000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 227	     f01f9000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 228	     f01fa000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 229	     f01fb000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 230	     f01fc000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 231	     f01fd000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 232	     f01fe000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 233	     f01ff000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 234	     f0200000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 235	     f0201000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 236	     f0202000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 237	     f0203000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 238	     f0204000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 239	     f0205000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 240	     f0206000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 241	     f0207000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 242	     f0208000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 243	     f0209000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 244	     f020a000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 245	     f020b000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 246	     f020c000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 247	     f020d000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 248	     f020e000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 249	     f020f000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 250	     f0210000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 251	     f0211000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 252	     f0212000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 253	     f0213000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 254	     f0214000
+[DEBUG Info]: kern/pmap.c:page_init:275
+[DEBUG Info]: skip page 255	     f0215000
+QEMU: Terminated
+
